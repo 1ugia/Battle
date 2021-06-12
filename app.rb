@@ -37,7 +37,12 @@ class Battle < Sinatra::Base
     # @player2_name = session[:player2_name]
     @player1_name = $player1.name
     @player2_name = $player2.name
+
+    @player1 = $player1
+    @player2 = $player2
+    @player1.attack(@player2)
     erb(:attack)
+    
   end
 
   # start the server if ruby file executed directly
